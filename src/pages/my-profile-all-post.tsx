@@ -50,9 +50,7 @@ export const MyProfileAllPost = () => {
   const handleClick = (id: number) => {
     navigate(`/detail-post-me/${id}`);
   };
-  const isLiked = threads?.filter((thread) => {
-    localLikes[thread.id] ?? false;
-  });
+
 
   console.log(threads);
 

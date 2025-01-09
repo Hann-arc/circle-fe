@@ -7,7 +7,6 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import Swal from 'sweetalert2';
 
 export const useUpdateProfile = () => {
   const { isOpen, openDialog, closeDialog } = useDialogStore();

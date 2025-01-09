@@ -1,8 +1,6 @@
 import { useGetMe } from '@/features/auth/hooks/use-find-me';
 import { useFindthreadMe } from '@/service/thread';
 import { Box, Image, Text } from '@chakra-ui/react';
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import { useNavigate } from 'react-router';
 
 export const MediaMyProfile = () => {
@@ -28,12 +26,6 @@ export const MediaMyProfile = () => {
       (thread) =>
         thread.media && thread.media.trim() !== "" && isValidUrl(thread.media)
     ) || [];
-
-    const timeThread = threads?.map((post) => post.createdAt).filter(Boolean);
-    dayjs.extend(relativeTime);
-    const timestamps = timeThread?.map((time) => dayjs(time));
-    const time = timestamps?.map((timestamp) => dayjs().to(timestamp));
-
 
   return (
     <Box

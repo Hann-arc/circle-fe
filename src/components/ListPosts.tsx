@@ -1,24 +1,22 @@
-import { Comment, Heart, Like } from '../assets/index';
-import { Box, Image, Text } from '@chakra-ui/react';
 import { Avatar } from '@/components/ui/avatar';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Box, Image, Text } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
+import { Comment, Heart, Like } from '../assets/index';
 // import useLikeStore from '@/store/likesStore';
-import { useGetThreads } from '@/hooks/threads/threads';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import dayjs from 'dayjs';
-import { LoadingSpiner } from './LoadingSpiner';
-import { useLikeStore } from '@/store/likesStore';
-import { useToggleLike } from '@/hooks/useLike';
-import { useFindMe } from '@/features/auth/services/auth/auth-service';
-import { useDeleteThread } from '@/hooks/threads/use-delete-thread';
-import { Button } from '@/components/ui/button';
 import {
   MenuContent,
   MenuItem,
   MenuRoot,
   MenuTrigger,
 } from '@/components/ui/menu';
+import { useGetThreads } from '@/hooks/threads/threads';
+import { useDeleteThread } from '@/hooks/threads/use-delete-thread';
+import { useToggleLike } from '@/hooks/useLike';
+import { useLikeStore } from '@/store/likesStore';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import Swal from 'sweetalert2';
+import { LoadingSpiner } from './LoadingSpiner';
 export const ListPost = () => {
   const { threads, isLoading, isError } = useGetThreads();
   const navigate = useNavigate();

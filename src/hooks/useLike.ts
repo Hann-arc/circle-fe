@@ -23,7 +23,7 @@ export const useToggleLike = () => {
 
       return { previousLiked };
     },
-    onError: (err, threadId, context) => {
+    onError: (_, threadId, context) => {
       if (context) {
         setLocalLike(threadId, context.previousLiked);
       }

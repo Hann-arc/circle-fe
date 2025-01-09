@@ -4,7 +4,6 @@ import { EditProfileDialogComponent } from "@/components/EditProfileDialog";
 import { Avatar } from '@/components/ui/avatar';
 import { DialogContent, DialogRoot } from '@/components/ui/dialog';
 import { useGetMe } from "@/features/auth/hooks/use-find-me";
-import { useAuthStore } from "@/features/auth/store/auth";
 import { useDialogStore } from '@/store/dialogStore';
 import {
   Box,

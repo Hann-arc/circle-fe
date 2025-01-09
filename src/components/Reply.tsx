@@ -1,13 +1,12 @@
 import { InputImage } from '@/assets';
-import { Box, Image, Input } from '@chakra-ui/react';
-import { Avatar } from './ui/avatar';
 import { Button } from "@/components/ui/button";
-import { useAuthStore } from '@/features/auth/store/auth';
-import { useCallback, useRef, useState } from 'react';
 import { useGetMe } from '@/features/auth/hooks/use-find-me';
 import { useCreateReply } from '@/hooks/threads/reply';
-import { useParams } from 'react-router';
 import { useFindUniqueThread } from '@/service/thread';
+import { Box, Image, Input } from '@chakra-ui/react';
+import { useCallback, useRef, useState } from 'react';
+import { useParams } from 'react-router';
+import { Avatar } from './ui/avatar';
 
 export function Reply() {
   const { User } = useGetMe();

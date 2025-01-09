@@ -2,7 +2,6 @@ import Cookies from 'js-cookie';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { useLikeStore } from '@/store/likesStore';
 
 export function useLogout() {
   const navigate = useNavigate();

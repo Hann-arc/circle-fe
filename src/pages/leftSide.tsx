@@ -12,7 +12,6 @@ import {
 } from '@/assets';
 import ButtonSide from '@/components/ButtonSide';
 import { useLogout } from '@/features/auth/hooks/useLogout';
-import { useAuthStore } from '@/features/auth/store/auth';
 import { useDialogStore } from '@/store/dialogStore';
 import { Box, Button, Heading, Image, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
