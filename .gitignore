@@ -14,7 +14,6 @@ dist-ssr
 
 public
 src/assets/imgs
-src/components/ui
 src/datas
 features/auth/store
 
