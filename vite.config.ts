@@ -9,15 +9,18 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': '/src',
+      '@components': '/src/components',
+      '@authComponents': '/src/features/auth/components',
+      '@types': '/src/features/auth/types',
     },
   },
-  // test: {
-  //   globals: true,
-  //   environment: 'jsdom',
-  //   setupFiles: './src/test/setup.ts',
-  //   coverage: {
-  //     reporter: ['text', 'json', 'html'],
-  //     exclude: ['node_modules/', 'src/test/**/*'],
-  //   },
-  // },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/test/setup.ts',
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+      exclude: ['node_modules/', 'src/test/**/*'],
+    },
+  },
 });

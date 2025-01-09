@@ -13,7 +13,6 @@ dist-ssr
 *.local
 
 public
-src/assets/imgs
 features/auth/store
 
 
