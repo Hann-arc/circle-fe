@@ -2,8 +2,10 @@ import { apiURL } from '../utils/baseURL';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
+const api = apiURL
+
 export const Api = axios.create({
-  baseURL: apiURL
+  baseURL: api
 }); 
 
 Api.interceptors.request.use((config) => {

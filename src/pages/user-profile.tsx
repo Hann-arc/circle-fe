@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 
-export function ProfileUserPage() {
+ function ProfileUserPage() {
     
   const { username } = useParams();
   const user = fakeUsers.find((user) => user.username === username);
@@ -141,3 +141,4 @@ export function ProfileUserPage() {
   );
 }
 
+export default ProfileUserPage
