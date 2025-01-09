@@ -1,0 +1,54 @@
+[
+  {
+    "email": "janedoe@gmail.com",
+    "username": "janedoe213",
+    "password": "hutao123",
+    "profile": {
+      "fullName": "Jane Doe",
+      "description": "Goyang dumang",
+      "address": "Jln. Depok",
+      "profilePicture": "https://i.pinimg.com/originals/23/5d/e3/235de3d9b02bada865a338de17477fb6.jpg",
+      "followers": 100,
+      "following": 90
+    }
+  },
+  {
+    "email": "zhofan@mail.com",
+    "username": "Zhofan",
+    "password": "zhofan123",
+    "profile": {
+      "fullName": "Joopann",
+      "address": "Jln. Depok",
+      "description": "ORrraaaaa",
+      "profilePicture": "https://i.pinimg.com/originals/06/0d/c2/060dc29be4bc7d129c25a0730ecf3763.jpg",
+      "followers": 907,
+      "following": 230
+    }
+  },
+  {
+    "email": "test@mail.co",
+    "username": "test123",
+    "password": "test123",
+    "profile": {
+      "fullName": "TestAcc",
+      "address": "Jln. Depok",
+      "description": "Testttt",
+      "profilePicture": "https://static.wikia.nocookie.net/secretly-cultivate-for-a-thousand-years/images/5/52/HanJue_2.jpg/revision/latest?cb=20240409235215",
+      "followers": 960,
+      "following": 90
+    }
+  },
+  {
+    "email": "hanjue@mail.com",
+    "username": "Hanjue",
+    "password": "hanjue123",
+    "profile": {
+      "fullName": "✨ HannnJuee ✨",
+      "address": "Jln. Depok",
+      "description": "Milik Milk Mlik",
+      "profilePicture": "https://toonclash.com/wp-content/uploads/2023/10/Top-Tier-Providence-Secretly-Cultivate-for-a-Thousand-Years-193x278.jpg",
+      "followers": 110,
+      "following": 90
+    }
+  }
+]

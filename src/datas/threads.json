@@ -1,0 +1,58 @@
+[
+    {
+      "id": 1,
+      "fullName" : "Hann jue",
+      "username": "janue12",
+      "time": "4h ago",
+      "avatar": "https://toonclash.com/wp-content/uploads/2023/10/Top-Tier-Providence-Secretly-Cultivate-for-a-Thousand-Years-193x278.jpg",
+      "content": "hello world!",
+      "likes": 5,
+      "liked": false,
+      "replies": 2
+    },
+    {
+      "id": 2,
+      "fullName": "John Doe",
+      "username": "johndoe",
+      "time": "3h ago",
+      "avatar": "https://i.pinimg.com/originals/06/0d/c2/060dc29be4bc7d129c25a0730ecf3763.jpg",
+      "content": "React is awesome!",
+      "likes": 10,
+      "liked": false,
+      "replies": 4
+    },
+    {
+      "id": 3,
+      "fullName": "Jane Smith",
+      "username": "janesmith",
+      "time": "2h ago",
+      "avatar": "https://i.pinimg.com/originals/23/5d/e3/235de3d9b02bada865a338de17477fb6.jpg",
+      "content": "This is a test post.",
+      "likes": 2,
+      "liked": false,
+      "replies": 0
+    },
+    {
+      "id": 4,
+      "fullName": "Jane Smith",
+      "username": "janesmith",
+      "time": "2h ago",
+      "avatar": "https://i.pinimg.com/originals/23/5d/e3/235de3d9b02bada865a338de17477fb6.jpg",
+      "content": "This is a test post.",
+      "likes": 2,
+      "liked": false,
+      "replies": 0
+    },
+    {
+      "id": 5,
+      "fullName": "Jane Smith",
+      "username": "janesmith",
+      "time": "2h ago",
+      "avatar": "https://i.pinimg.com/originals/23/5d/e3/235de3d9b02bada865a338de17477fb6.jpg",
+      "content": "This is a test post.",
+      "likes": 2,
+      "liked": false,
+      "replies": 0
+    }
+  ]
+  

@@ -14,7 +14,6 @@ dist-ssr
 
 public
 src/assets/imgs
-src/datas
 features/auth/store
 
 
