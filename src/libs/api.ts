@@ -3,7 +3,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 export const Api = axios.create({
-  baseURL: apiURL,
+  baseURL: apiURL
 }); 
 
 Api.interceptors.request.use((config) => {
