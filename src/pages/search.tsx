@@ -7,13 +7,12 @@ import { Box, HStack, Image, Input, Text } from '@chakra-ui/react';
 import { useDebounce } from '@uidotdev/usehooks';
 import { useForm } from 'react-hook-form';
 import { LuUser } from 'react-icons/lu';
-import { useNavigate } from 'react-router-dom';
 
-export function SearchComponent({ userId }: { userId: number }) {
+
+export function SearchComponent() {
   const { register, watch } = useForm({ defaultValues: { search: '' } });
   const searchValue = watch('search');
   const debounceSearch = useDebounce(searchValue, 500);
-  const navigate = useNavigate();
   const { users,isLoading, isError } = useSearch(debounceSearch);
 
   // const filteredUsers = fakeUsers.filter(

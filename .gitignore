@@ -16,6 +16,8 @@ public
 src/assets/imgs
 src/datas
 features/auth/store
+src/libs
+src/pages/profile-user-all-post.tsx
 
 # Editor directories and files
 .vscode/*
