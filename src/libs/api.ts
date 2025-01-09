@@ -1,4 +1,4 @@
-import { apiURL } from '../utils/baseURL';
+import { apiURL } from '../utils/baseurl';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
