@@ -1,6 +1,6 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { Avatar } from './ui/avatar';
-import { Heart, Comment, avatar } from '@/assets';
+import { Heart, Comment } from '@/assets';
 import { useFindUniqueThread } from '@/service/thread';
 import { useParams } from 'react-router';
 import { LoadingSpiner } from './LoadingSpiner';

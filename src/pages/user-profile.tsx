@@ -1,7 +1,6 @@
-import { Cover, LeftArrow, User } from "@/assets";
+import { Cover, LeftArrow } from "@/assets";
 import { LoadingSpiner } from "@/components/LoadingSpiner";
 import { Avatar } from '@/components/ui/avatar';
-import fakeUsers from '@/datas/users.json'
 import { useGetDetailUser } from "@/service/user";
 import {
     Box,

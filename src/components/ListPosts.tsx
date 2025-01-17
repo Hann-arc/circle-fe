@@ -18,7 +18,6 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import Swal from 'sweetalert2';
 import { LoadingSpiner } from './LoadingSpiner';
 import { useGetMe } from '@/features/auth/hooks/use-find-me';
-import { useGetDetailUser } from '@/service/user';
 export const ListPost = () => {
   const { threads, isLoading, isError } = useGetThreads();
   const { User } = useGetMe();

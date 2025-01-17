@@ -4,13 +4,11 @@ import {
   Heart,
   Comment,
   ArrowRightCircle,
-  ksitig,
   ArrowLeftCircle,
 } from '@/assets';
 import { Reply } from '@/components/Reply';
 import { Replies } from '@/components/Replies';
 import { CloseButton } from '@/components/ui/close-button';
-import { useGetMe } from '@/features/auth/hooks/use-find-me';
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useFindUniqueThread } from '@/service/thread';
