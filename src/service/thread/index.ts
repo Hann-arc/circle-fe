@@ -9,7 +9,7 @@ export function useFindThreads() {
       return (await Api.get('/threads')).data;
     },
   });
-}
+} 
 
 export function useFindUniqueThread(id: number) {
   return useQuery<Thread>({

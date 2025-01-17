@@ -7,6 +7,7 @@ import { Box, HStack, Image, Input, Text } from '@chakra-ui/react';
 import { useDebounce } from '@uidotdev/usehooks';
 import { useForm } from 'react-hook-form';
 import { LuUser } from 'react-icons/lu';
+import { useNavigate } from 'react-router';
 
 
 export function SearchComponent() {
@@ -14,7 +15,11 @@ export function SearchComponent() {
   const searchValue = watch('search');
   const debounceSearch = useDebounce(searchValue, 500);
   const { users,isLoading, isError } = useSearch(debounceSearch);
+  const navigate = useNavigate();
 
+  const handleDetailProfileUser = (query: string) => {
+    navigate(`/${query}`);
+  };
   // const filteredUsers = fakeUsers.filter(
   //   (user) =>
   //     user.profile.fullName.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -105,7 +110,10 @@ export function SearchComponent() {
                 >
                   <Box
                     display="flex"
-                    // onClick={() => navigate(`/user-profile/${user.username}`)}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      handleDetailProfileUser(user.userName as string);
+                    }}
                     style={{ cursor: 'pointer' }}
                   >
                     <Image

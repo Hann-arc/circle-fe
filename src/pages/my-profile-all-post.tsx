@@ -50,6 +50,9 @@ export const MyProfileAllPost = () => {
   const handleClick = (id: number) => {
     navigate(`/detail-post-me/${id}`);
   };
+  const handleDetailImg = (id: number) => {
+    navigate(`/detail/photo/${id}`);
+  };
 
 
   console.log(threads);
@@ -110,8 +113,12 @@ export const MyProfileAllPost = () => {
                       <Image
                         src={thread.media}
                         alt=""
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleDetailImg(thread.id)}}
                         borderRadius="8px"
                         objectFit="cover"
+                        w={"80%"}
                         maxHeight="400px"
                         marginBottom="5px"
                       />

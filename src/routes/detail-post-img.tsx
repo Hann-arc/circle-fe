@@ -1,9 +1,10 @@
-import { Box, Text } from "@chakra-ui/react"
+import { DetailPostImg } from '@/pages/detail-post-img';
+import { Box } from '@chakra-ui/react';
 
-export const DetailPostImgRoute = () =>{
-    return(
-        <Box> 
-            <Text>Detail post img route</Text>
-        </Box>
-    )
-}
+export const DetailPostImgRoute = () => {
+  return (
+    <Box display={"flex"}  w={"auto"}>
+      <DetailPostImg />
+    </Box>
+  );
+};

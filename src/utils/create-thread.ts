@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const createThreadSchema = z.object({
-  content: z.any(),
+  content: z.string(),
   media: z.any()
   })
 ;

@@ -1,3 +1,5 @@
+import { Thread } from "@/types/threads";
+
 export interface Following {
   following: {
     id: number;
@@ -36,4 +38,7 @@ export interface User {
   followers: Follower[];
   _count: Count;
   Profile: Profile | null;
+  Thread: Thread[]
 }
+
+

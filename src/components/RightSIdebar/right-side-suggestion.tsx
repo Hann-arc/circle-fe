@@ -1,19 +1,28 @@
-import { Avatar } from "@/components/ui/avatar";
-import { useGetSuggestedUser } from "@/hooks/user";
-import { Box, Text } from "@chakra-ui/react";
-import { ButtonFollow } from "../FollowButton";
-import { LoadingSpiner } from "../LoadingSpiner";
+import { Avatar } from '@/components/ui/avatar';
+import { useGetSuggestedUser } from '@/hooks/user';
+import { Box, Text } from '@chakra-ui/react';
+import { ButtonFollow } from '../FollowButton';
+import { LoadingSpiner } from '../LoadingSpiner';
+import { useNavigate } from 'react-router';
 
 export function RightSideSuggestion() {
+  const { suggestedUser, isLoading, isError } = useGetSuggestedUser();
+  const navigate = useNavigate();
+  if (isLoading) {
+    return (
+      <Box display={"flex"} justifyContent={"center"} alignItems={"center"} h={"20vh"}>
+        <LoadingSpiner />
+      </Box>
+    );
+  }
+  
+  const handleDetailProfileUser = (query: string) => {
+    navigate(`/${query}`);
+  };
 
- const {suggestedUser, isLoading, isError} = useGetSuggestedUser()
 
- if (isLoading){
-  return <LoadingSpiner />
- }
-
-  if(isError){
-    return <div>Error</div>
+  if (isError) {
+    return <div>Error</div>;
   }
 
   return (
@@ -50,7 +59,12 @@ export function RightSideSuggestion() {
                   marginLeft="22px"
                   borderRadius="full"
                   boxSize="40px"
-                  src={user.Profile?.avatar || "default.jpg"}
+                  src={user.Profile?.avatar || 'default.jpg'}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    handleDetailProfileUser(user.userName as string);
+                  }}
+                  cursor={'pointer'}
                 />
                 <Box
                   marginLeft="16px"
@@ -58,10 +72,18 @@ export function RightSideSuggestion() {
                   display="flex"
                   flexDirection="column"
                 >
-                  <Text fontSize="15px" fontWeight="bold">
+                  <Text fontSize="15px" fontWeight="bold"  onClick={(e) => {
+                    e.stopPropagation()
+                    handleDetailProfileUser(user.userName as string);
+                  }}
+                  cursor={'pointer'} >
                     {user.fullName}
                   </Text>
-                  <Text fontSize="15px" color="#909090">
+                  <Text fontSize="15px" color="#909090"  onClick={(e) => {
+                    e.stopPropagation()
+                    handleDetailProfileUser(user.userName as string);
+                  }}
+                  cursor={'pointer'}>
                     @{user.userName}
                   </Text>
                 </Box>
@@ -70,12 +92,13 @@ export function RightSideSuggestion() {
             </Box>
           ))
         ) : (
-          <Box marginLeft="22px" >
-            <Text marginBottom={"20px"} color="#909090">No suggested users available</Text>
+          <Box marginLeft="22px">
+            <Text marginBottom={'20px'} color="#909090">
+              No suggested users available
+            </Text>
           </Box>
         )}
       </Box>
     </Box>
   );
-  
 }

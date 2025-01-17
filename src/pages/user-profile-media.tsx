@@ -1,12 +1,14 @@
 import { useGetMe } from '@/features/auth/hooks/use-find-me';
 import { useFindthreadMe } from '@/service/thread';
+import { useGetDetailUser } from '@/service/user';
 import { Box, Image, Text } from '@chakra-ui/react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 
-export const MediaMyProfile = () => {
-  const { User } = useGetMe();
-  const userId = User?.id;
-  const { data: threads } = useFindthreadMe(userId);
+export const MediaUserProfile = () => {
+    const { query } = useParams();
+
+    const { data: user } = useGetDetailUser(String(query));
+  
   const navigate = useNavigate();
 
   const isValidUrl = (url: any) => {
@@ -23,7 +25,7 @@ export const MediaMyProfile = () => {
     navigate(`/detail/photo/${id}`)
   }
   const threadsWithMedia =
-    threads?.filter(
+  user?.Thread?.filter(
       (thread) =>
         thread.media && thread.media.trim() !== '' && isValidUrl(thread.media)
     ) || [];

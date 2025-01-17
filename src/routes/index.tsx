@@ -16,11 +16,29 @@ import DetailRout from './detail-post';
 import { ProfileUserRoute } from './user-profile';
 import UserProfileAllPostRoute from './profile-user-all-post-route';
 import UserProfileMediaRoute from './user-profile-media-route';
+import { DetailPostImgRoute } from './detail-post-img';
+import UserFollowsRoute from './user-follows';
+import UserFollowingRoute from './user-following';
+import UserFollowersRoute from './user-followers';
 
 const router = createBrowserRouter([
   {
     element: <ProvateRoute />,
     children: [
+      {
+        path: 'user-follows',
+        element: <UserFollowsRoute />,
+        children: [
+          {
+            index: true,
+            element: <UserFollowingRoute />
+          },
+          {
+            path: 'followers',
+            element: <UserFollowersRoute />
+          }
+        ]
+      },
       {
         path: '/follows',
         element: <FollowsRoute />,
@@ -48,9 +66,9 @@ const router = createBrowserRouter([
             element: <MediaRoute />,
           },
         ],
-      },
+      },  
       {
-        path: '/user-profile/:username',
+        path: '/:query',
         element: <ProfileUserRoute />,
         children:[
           {
@@ -79,7 +97,15 @@ const router = createBrowserRouter([
         path: '/detail-post-me/:id',
         element: <DetailRout />,
       },
+      {
+        path: '/detail/photo/:id',
+        element: <DetailPostImgRoute />,
+      },
     ],
+  },
+  {
+    path: '/sign-in',
+    element: <LoginRoute />,
   },
   {
     path: '/sign-in',

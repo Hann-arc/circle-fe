@@ -1,6 +1,8 @@
-import { Cover, LeftArrow } from "@/assets";
+import { Cover, LeftArrow, User } from "@/assets";
+import { LoadingSpiner } from "@/components/LoadingSpiner";
 import { Avatar } from '@/components/ui/avatar';
 import fakeUsers from '@/datas/users.json'
+import { useGetDetailUser } from "@/service/user";
 import {
     Box,
     Button,
@@ -11,12 +13,23 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
 
  function ProfileUserPage() {
     
-  const { username } = useParams();
-  const user = fakeUsers.find((user) => user.username === username);
-
+  const { query } = useParams();
+  console.log('query:', query);
+  const {data: user, isLoading} = useGetDetailUser(String(query))
    const handleBack = () => {
     window.history.back();
   };
+
+  if (isLoading) {
+      <LoadingSpiner />;
+      console.log('Loading data...');
+    } else {
+      console.log('data: ', user);
+      console.log('username:', user?.userName);
+     
+    }
+    console.log('folllowrs:', user?._count.followers );
+
    const navigate = useNavigate();
   const goToFollowing = () => {
     navigate("/follows");
@@ -41,17 +54,17 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
         <Box display="flex" alignItems={"center"} >
           <Button backgroundColor={"transparent"} _hover={{backgroundColor: "transparent"}}>
           <Image src={LeftArrow} cursor={"pointer"} onClick={handleBack} /></Button>
-          <Text> {user?.profile.fullName}</Text>
+          <Text> {user?.fullName}</Text>
         </Box>
       </Box>
 
-      <Image src={Cover} borderRadius="15px" marginLeft="22.5px" height="110px" width="610.5px" />
+      <Image src={user?.Profile?.cover || Cover} borderRadius="15px" marginLeft="22.5px" height="110px" width="610.5px" />
       <Box display="flex" justifyContent="space-between">
         <Avatar
           borderRadius="full"
           border="4px solid #3F3F3F"
           boxSize="90px"
-          src={user?.profile.profilePicture}
+          src={user?.Profile?.avatar}
           marginTop="-50px"
           marginLeft="40px"
         />
@@ -75,18 +88,18 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
         fontWeight="bold"
         fontSize="17px"
       >
-        {user?.profile.fullName}
+        {user?.fullName}
       </Text>
       <Text marginLeft="25px" marginTop={"5px"} color="#909090">
-        @{user?.username}
+        @{user?.userName}
       </Text>
       <Text marginLeft="25px" marginTop={"5px"}>
-        {user?.profile?.description}
+        {user?.Profile?.bio}
       </Text>
 
       <Box display="flex" marginTop={"7px"} marginBottom="20px">
         <Text marginLeft="25px">
-        {user?.profile.following}{" "}
+        {user?._count.following}{" "}
           <Text
             as="span"
             onClick={goToFollowing}
@@ -97,7 +110,7 @@ import { NavLink, useNavigate, useParams } from "react-router-dom";
           </Text>
         </Text>
         <Text marginLeft="25px">
-        {user?.profile.followers}{" "}
+        {user?._count.followers}{" "}
           <Text
             as="span"
             onClick={goToFollowers}

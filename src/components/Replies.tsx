@@ -1,11 +1,12 @@
 import { Box, Image, Text } from '@chakra-ui/react';
 import { Avatar } from './ui/avatar';
-import { Heart, Comment } from '@/assets';
+import { Heart, Comment, avatar } from '@/assets';
 import { useFindUniqueThread } from '@/service/thread';
 import { useParams } from 'react-router';
 import { LoadingSpiner } from './LoadingSpiner';
 import { useFindReplies } from '@/service/replies';
 import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 export function Replies() {
   const { id } = useParams();
@@ -20,6 +21,7 @@ export function Replies() {
     console.log('data: ', threads);
     console.log('author:', threads?.author?.fullName);
   }
+  dayjs.extend(relativeTime);
   return (
     <>
       {replies && replies.length > 0 ? (
@@ -36,7 +38,7 @@ export function Replies() {
               backgroundColor={'#1A1A1A'}
               paddingBottom={'18px'}
             >
-              <Avatar marginLeft={'22px'} src={reply.author.Profile.avatar} boxSize="40px" />
+              <Avatar marginLeft={'22px'} src={reply.author.Profile?.avatar } boxSize="40px" />
               <Box
                 paddingRight={'20px'}
                 marginLeft={'20px'}
@@ -68,6 +70,7 @@ export function Replies() {
                     alt=""
                     borderRadius="8px"
                     objectFit="cover"
+                    w={"80%"}
                     maxHeight="400px"
                     marginBottom="5px"
                   />

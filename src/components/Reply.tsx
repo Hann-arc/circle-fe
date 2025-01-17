@@ -126,7 +126,7 @@ export function Reply() {
             loading={isLoading}
             type="submit"
           >
-            Post
+            Reply
           </Button>
         </Box>
       </form>

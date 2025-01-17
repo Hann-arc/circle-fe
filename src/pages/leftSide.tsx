@@ -16,18 +16,17 @@ import { useDialogStore } from '@/store/dialogStore';
 import { Box, Button, Heading, Image, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
-
 export function LeftSide() {
   const { logout } = useLogout();
   const { openDialog } = useDialogStore();
   const navigate = useNavigate();
 
- 
   const createThread = () => {
     navigate('/');
-    openDialog();
+    setTimeout(() => {
+      openDialog();
+    }, 500);
   };
-
 
   return (
     <Box
@@ -50,7 +49,7 @@ export function LeftSide() {
           marginTop="40px"
           w="252.75px"
           gap="6px"
-        > 
+        >
           <ButtonSide
             icon={Home}
             activeIcon={HomeActive}

@@ -19,8 +19,13 @@ import Close from "./imgs/close-circle.svg";
 import Like from "./imgs/like.svg";
 import avatar from "./imgs/avatar.png";
 import ksitig from "./imgs/Ksitigarbha.png";
+import ArrowRightCircle from "./imgs/arrow-circle-right.svg";
+import ArrowLeftCircle from "./imgs/arrow-circle-left.svg";
+
 
 export{
+    ArrowLeftCircle,
+    ArrowRightCircle,
     ksitig,
     avatar,
     Like,

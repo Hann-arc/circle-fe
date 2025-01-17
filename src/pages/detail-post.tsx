@@ -8,11 +8,12 @@ import { useFindUniqueThread } from '@/service/thread';
 import { useLikeStore } from '@/store/likesStore';
 import { Box, Button, Image, Text } from '@chakra-ui/react';
 import dayjs from 'dayjs';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 
 export const DetailPost = () => {
   const { id } = useParams();
   const { data: threads, isLoading } = useFindUniqueThread(Number(id));
+  const navigate = useNavigate()
   const handleBack = () => {
     window.history.back();
   };
@@ -23,11 +24,13 @@ export const DetailPost = () => {
     console.log('data: ', threads);
     console.log('author:', threads?.author?.fullName);
   }
-
   const { localLikes } = useLikeStore();
   const { mutate: toggleLike } = useToggleLike();
 
   const isLiked = threads ? localLikes[threads.id] ?? false : false;
+  const handleDetailImg = (id: number)=>{
+    navigate(`/detail/photo/${id}`)
+  }
 
   return (
     <Box backgroundColor={'#1A1A1A'} display="flex" flexDirection="column">
@@ -99,13 +102,15 @@ export const DetailPost = () => {
         {threads?.media && (
           <Box marginTop="20px">
             <Image
+            marginX={'auto'}
               src={threads?.media}
               alt=""
-              maxWidth="400px"
+              cursor={"pointer"}
+              onClick={() => handleDetailImg(threads?.id)}
               height="auto"
-              objectFit="contain"
+              w={"90%"}
               borderRadius="8px"
-              marginX="auto"
+              
             />
           </Box>
         )}

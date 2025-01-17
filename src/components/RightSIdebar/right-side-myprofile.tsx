@@ -19,7 +19,11 @@ export function RightSideMyProfile() {
 
   const openDialogProfile = () => {
     navigate('/profile');
-    openDialog();
+   ;
+   setTimeout(() => {
+    openDialog()
+  }, 300);
+  
   };
 
   const goToFollowing = () => {

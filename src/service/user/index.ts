@@ -19,3 +19,13 @@ export function useSearchUsers(query: string) {
     },
   });
 }
+
+export function useGetDetailUser(query: string){
+  return useQuery<User>({
+    queryKey:['user', query],
+    queryFn: async () => {
+      const sanitizedQuery = query.startsWith('@') ? query.slice(1) : query;
+      return (await Api.get(`/users/${sanitizedQuery}`)).data;
+    }
+  })
+}
