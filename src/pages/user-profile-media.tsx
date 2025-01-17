@@ -1,5 +1,3 @@
-import { useGetMe } from '@/features/auth/hooks/use-find-me';
-import { useFindthreadMe } from '@/service/thread';
 import { useGetDetailUser } from '@/service/user';
 import { Box, Image, Text } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router';
